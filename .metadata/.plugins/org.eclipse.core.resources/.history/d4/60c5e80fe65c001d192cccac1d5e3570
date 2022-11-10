@@ -1,0 +1,6 @@
+package com.operater.controller;
+
+public class OperatorController {
+	//기능제공 클래스
+	
+}

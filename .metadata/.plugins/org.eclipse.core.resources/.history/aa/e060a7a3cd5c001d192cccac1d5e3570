@@ -1,0 +1,10 @@
+package com.bs.variable;
+
+public class OverflowTest {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

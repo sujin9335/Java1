@@ -1,0 +1,118 @@
+package com.sujin.b;
+import java.util.Scanner; // 입력을 위한 스캐너 불러오기 자바 자체 기능
+public class OperatorController {
+	public void sujin() {   // main에서 불러올때 지정 이름 sujin
+		
+//		System.out.println("sujin");
+//		float a = 10.2f;
+//		System.out.println(a);
+//		int b = 10;
+//		System.out.println(b);
+//		float c = b;
+//		System.out.println(c);
+		
+		//학생정보를 입력받고 출력하기
+		//이름name, 나이age, 성별gender, 학년a, 반b, 번호nume, 키high, 이메일mail을 입력받고
+		//입력받은 내용 한번에 출력하기
+		
+//		Scanner sc = new Scanner(System.in); // Scanner 생성하기 
+//		int age, a, b, nume; // variable(변수) 리터럴 선언
+//		double high;
+//		char gender;
+//		String name, mail;
+//		System.out.print("이름 : ");
+//		name = sc.next();
+//		System.out.print("나이 : ");
+//		age = sc.nextInt(); 
+//		System.out.print("성별 : ");
+//		gender = sc.next().charAt(0); // .charAt(0) 빼면 에러가남 왜냐하면 gender는 char 변수선언이라 한글자만 들어올수잇 
+//		System.out.print("학년 : ");
+//		a = sc.nextInt();
+//		System.out.print("반 : ");
+//		b = sc.nextInt();
+//		System.out.print("번호 : ");
+//		nume = sc.nextInt();
+//		System.out.print("키 : ");
+//		high = sc.nextDouble();
+//		sc.nextLine(); // nextLine 은 한번 비워줘야됨 
+//		System.out.print("이메일 : ");
+//		mail = sc.nextLine(); // nextLine 은 띄어쓰기가 적용됨
+//		
+//		
+//		System.out.printf("%s %d %s %d %d %d %.1f %s", name,age,gender,a,b,nume,high,mail);
+		
+		
+//		String str;
+////		str = new String();
+//		char ch = ' ';
+//		str = "안녕하";
+//		ch = str.charAt(0);
+//		System.out.println(ch);
+		
+
+//		int a, b, c, d;
+//		a = 10;
+//		b = a++; // 뒤쪽에 a++붙으면 b는 10으로 출력되지만 연산시+1시려고 대기중
+//		c = a+=5; // 5를 +주는 연산
+//		d = 20;
+//		System.out.println(a+b);
+//		System.out.println(c);
+		
+		
+//		int a, b, result1;
+//		a=10;
+//		b=20;
+//		result1 = a > b ? a+1 : a-1; //삼항연산자 ? 앞에 참 거짓을 판별후 참이면 a+1. 거짓이면 a-1
+//		System.out.println(result1);
+		
+//		Scanner sc = new Scanner(System.in);
+//		String id, password;
+//		
+//		System.out.print("아이디 : ");
+//		id = sc.next();
+//		System.out.print("비밀번호 : ");
+//		password = sc.next();
+		
+//		if(id.equals("sujin")) {
+//			if(password.equals("123")) {
+//				System.out.println("로그인됨");
+//			}else {
+//				System.out.println("비밀번호 틀림");
+//			}	
+//		}else {
+//			System.out.println("아이디 틀림");
+//		}
+		
+		
+//		if(id.equals("sujin")&&password.equals("123")) {  //&& and로 위에꺼 줄인것
+//			System.out.println("로그인됨");
+//		}else {
+//			System.out.println("로그인 안됨");
+//		}
+		
+		
+		int i, j, a;
+//		i = 0;
+//		while(i<10) {
+//			System.out.println("sujin"+i);
+//			i++;
+//		}
+		
+//		for(i=0; i<10; i++) {
+//			if(i==5) {
+//				System.out.println("5임");
+//			}
+//			System.out.println("sujin"+i);
+//		}
+		
+        for (i = 0; i < 10; i++) {
+            for (j = 0; j < 10; j++) {
+            	for (a = 0; a < 10; a++) {
+                System.out.println(i + "" + j + a);
+            }
+        }
+		
+		
+		
+	}
+}

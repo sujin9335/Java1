@@ -1,0 +1,50 @@
+package com.bs.variable;
+
+public class Variable {
+	//main 메소드 만들기
+	public static void main(String[] args) {
+		//변수 선언하기
+		//RAM 영역에서 사용할 공간을 확보하는것
+		boolean flag;
+		//boolean 자료형은 1byte로 true, false리터럴을 저장할수 있다
+		//선언한 변수를 이용하려면 변수명을 사용한다
+		flag = true;
+		System.out.println(flag);
+		flag = false;
+		System.out.println(flag);
+		//변수는 단 한개값만 저장함 -> 코드의 순서에 따라 제일 마지막에 대입한 데이터만 남아있음
+		
+		
+		//정수형 변수 선언/대입하기
+		byte bnum; //파일데이터를 가져오거나 할때 사용 -> byte 배열을 이용함
+		short snum; //2byte크기를 갖는다
+		int num; //4byte크기를 갖고 기본적으로 숫자를 저장할때 많이 사용 default 자료형
+		long lnum; //8byte크리를 갖고 int형의 범위를 넘어서는 값을 저장할때 사용
+		
+		bnum = 100;
+		snum = 120;
+		num = 200;
+		lnum = 100000000000L;
+		
+		System.out.println(bnum);
+		System.out.println(snum);
+		System.out.println(num);
+		System.out.println(lnum);
+		
+		
+		//실수 : 소수함수
+		float fnum; //4byte
+		double dnum; //8byte default 자료형
+		fnum = 180.5f;
+		dnum = 65.5;
+		
+		
+		//문자를 저장하는 변수
+		char ch; //2byte 문자한개를 저장할 수 있는 공간으로 지정된 코드표와 매핑되어있음 
+		//문자를 표시하는 리터를은 ''로 표현을함
+		ch = 'A';//65로 저장
+//		ch = "AB";
+		
+		
+	}
+}
