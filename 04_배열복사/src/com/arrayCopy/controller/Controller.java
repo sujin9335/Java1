@@ -151,6 +151,8 @@ public class Controller {
 			}
 			System.out.println();
 		}
+
+
 		
 		//lotto만들기
 		//1~45까지 번호를 6자리에 넣기
