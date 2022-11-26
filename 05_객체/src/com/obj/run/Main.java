@@ -103,7 +103,7 @@ public class Main {
 		
 		
 		Student sh=new Student();
-		System.err.println(sh.name+" "+sh.age);
+		System.out.println(sh.name+" "+sh.age);
 		//초기화 블록 : 클래스가 생성될때(new) 실행할 내용이 있다면 선언하는 기능
 		//1.인스턴스초기화 블록
 		//	- 클래스를 생성할때 마다 실행됨

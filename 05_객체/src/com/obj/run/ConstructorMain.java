@@ -1,5 +1,7 @@
 package com.obj.run;
 
+import com.obj.model.vo.Animal;
+import com.obj.model.vo.Employee;
 import com.obj.model.vo.Inpo1;
 
 public class ConstructorMain {
@@ -25,7 +27,38 @@ public class ConstructorMain {
 		//3. 전체 정보를 초기화하는 매개변수를 선언하여
 		//오윤재 개발부 연구원 600원 0.5
 		//4. 필드에 사원번호를 추가하고 사번은 100부터 1씩증가되어 생성시 자동으로 부여될 수 있도록 하기
+		Employee em1=new Employee();
+//		em1.name="유병승";
+//		em1.department="강사부";
+//		em1.job="강사";
+//		em1.salary=100;
+//		em1.bonus=0.1;
+		
+		em1.EmPrint();
+		
+		Employee em2=new Employee("박세현");
+		EmPrint2(em2);
+		
+		Employee em3=new Employee("오윤재","개발부","연구원",600,0.5);
+		ConstructorMain a1=new ConstructorMain();
+		a1.EmPrint3(em3);
+		
+		
+		//this() 생성자 이용하기
+		Animal a=new Animal("나비", 9, "고양이", '여');
+		System.out.println(a.name+" "+a.age+" "+a.type+" "+a.gender);
+		
+		
+		
 		
 		
 	}
+	public static void EmPrint2(Employee em) {
+		System.out.println(em.name+" "+em.department+" "+em.job+" "+em.salary+" "+em.bonus);
+	}
+	public void EmPrint3(Employee em) {
+		System.out.println(em.name+" "+em.department+" "+em.job+" "+em.salary+" "+em.bonus);
+	}
 }
+	
+	
