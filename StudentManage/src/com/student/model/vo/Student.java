@@ -1,5 +1,7 @@
 package com.student.model.vo;
 
+import java.util.Objects;
+
 public class Student {
 	
 	private long studentNo;
@@ -20,8 +22,9 @@ public class Student {
 	public Student() {
 	}
 	
-	public Student(long studentNo,String name,int age,char gender,String address,String phone,String email,String major) {
-		this.studentNo=studentNo;
+	public Student(String name,int age,char gender,String address,
+					String phone,String email,String major) {
+
 		this.name=name;
 		this.age=age;
 		this.gender=gender;
@@ -85,8 +88,34 @@ public class Student {
 		return studentNo;
 	}
 	
-	public void infoStudent() {
-		
+	public String infoStudent() {
+		return name+" "+age+" "+gender+" "+phone+" "+email+" "+address+" "+major;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Student s=(Student)o;
+		if(this.name.equals(s.name)&&this.age==s.age
+						&&this.gender==s.gender
+						&&this.phone.equals(s.phone)
+						&&this.email.equals(s.email)
+						&&this.address.equals(s.address)
+						&&this.major.equals(s.major)) {
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(name,age,gender,phone,email,address,major);
+	}
+	
+	@Override
+	public String toString() {
+		return name+" "+age+" "+gender+" "+phone+" "+email+" "+address+" "+major;
+	}
+	
+	
 	
 }
