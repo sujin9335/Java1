@@ -76,6 +76,9 @@ public class Student extends Person{
 //		Object
 		return "";
 	}
-	
+//	@Override
+//	public String personPrint() {
+//		return super.personPrint()+grade+classNumber+number;
+//	}
 	
 }

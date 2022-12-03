@@ -79,10 +79,23 @@ public class InheritController {
 		System.out.println(s.equals(s2));
 		System.out.println(s.equals(s3));
 		System.out.println(s); //Object의 toString메소드가 실행됨
+		System.out.println(s.hashCode());
+		System.out.println(s3.hashCode());
+		
+		//메소드예약어 final
+		//메소드의 재정의를 못하게 하는 예약어
+		
+		//클래스에 final 예약어 사용하기 -> 상속이 불가능한 클래스
+		
+		
+		
 		
 	}
 	
-	
+	public void polyTest() {
+		
+		
+	}
 	
 	
 	

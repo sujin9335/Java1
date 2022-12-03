@@ -65,4 +65,9 @@ public class Person {
 	public void test() {
 		System.out.println("보모클래스의 test메소드");
 	}
+	
+	public final String personPrint() {
+		return "사람 : " + name+age+gender+address+email;
+	}
+	
 }

@@ -1,0 +1,11 @@
+alt+s+a+g 매개변수 생성자 만들기
+//alt+s+a 상속 설정해서 만들기
+
+
+alt+s+r+a+r getter setter 만글기 단축키
+
+extends //상속
+implements //인터페이스
+
+alt+s+s+s+enter+enter ->toString
+alt+s+h+h+enter+enter
