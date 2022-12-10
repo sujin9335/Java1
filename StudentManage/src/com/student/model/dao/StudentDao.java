@@ -15,8 +15,9 @@ public class StudentDao {
 //	private Student s1;
 //	private Student s2;
 //	private Student s3;
+	private static int index=0;
 	//객체배열로 데이터 저장하기
-	private Student[] students=new Student[10];
+	private Student[] students=new Student[2];
 	
 	
 	
@@ -42,13 +43,21 @@ public class StudentDao {
 		}
 		
 		
-		for(int i=0; i<students.length; i++) {
-			//저장소에 null인곳에 매개변수값을 저장
-			if(students[i]==null) {
-				students[i]=s;
-				result=0;
-				break;
-			}
+//		for(int i=0; i<students.length; i++) {
+//			//저장소에 null인곳에 매개변수값을 저장
+//			if(students[i]==null) {
+//				students[i]=s;
+//				result=0;
+//				break;
+//			}
+//		}
+		try {
+			students[StudentDao.index++]=s;
+		}catch(ArrayIndexOutOfBoundsException e) {
+			Student[] temp=new Student[students.length+1];
+			System.arraycopy(students, 0, temp, 0, students.length);
+			temp[students.length]=s;
+			students=temp;
 		}
 		
 		
@@ -88,7 +97,8 @@ public class StudentDao {
 //		}
 		
 		for(Student s : students) { //이것도 가능함
-			if(s!=null&&s.getName().equals(searchName)) {
+//			if(s!=null&&s.getName().equals(searchName)) {
+			if(s!=null&&s.getName().contains(searchName)) {
 				result+=s.infoStudent()+"\n";
 			}
 		}
