@@ -58,4 +58,12 @@ public class StudentController {
 		StudentView.getView().printStudent(result);
 	}
 	
+	public void saveData() {
+		dao.saveStudents();
+	}
+	
+	public void loadData() {
+		dao.loadStudents();
+	}
+	
 }

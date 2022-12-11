@@ -31,7 +31,9 @@ public class StudentView {
 			System.out.println("4. 전체조회");			
 			System.out.println("5. 이름으로 조회");
 			System.out.println("6. 전공으로 조회");
-			System.out.println("7. 프로그램 종료");
+			System.out.println("7. 저장하기");
+			System.out.println("8. 불러오기");	
+			System.out.println("0. 프로그램 종료");
 			System.out.print("입력: ");
 			int menu=sc.nextInt();
 			switch(menu) {
@@ -41,6 +43,8 @@ public class StudentView {
 				case 4 : controller.searchAll();break;
 				case 5 : controller.searchName();break;
 				case 6 : System.out.println("개발중...");break;
+				case 7 : controller.saveData();break;
+				case 8 : controller.loadData();break;
 				case 0 : System.out.println("학생관리프로그램을 종료하겠습니다");return;
 				default : System.out.println("잘못된 메뉴를 선택하셨습니다");break;
 			}

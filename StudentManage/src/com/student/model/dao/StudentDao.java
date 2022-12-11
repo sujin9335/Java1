@@ -1,5 +1,11 @@
 package com.student.model.dao;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 import com.student.model.vo.Student;
 
 public class StudentDao {
@@ -107,5 +113,44 @@ public class StudentDao {
 		
 		return result;
 	}
+	
+	
+	public void saveStudents() {
+		//students필드를 파일로 저장
+		try(FileOutputStream fos=new FileOutputStream("students.bs");
+				ObjectOutputStream oos=new ObjectOutputStream(fos);){
+			oos.writeObject(this.students);
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadStudents() {
+		
+		try(FileInputStream fis=new FileInputStream("students.bs");
+				ObjectInputStream ois=new ObjectInputStream(fis);){
+			
+			this.students=(Student[])ois.readObject();
+			int count=0;
+			for(Student s : students) {
+				if(s!=null) count++;
+			}
+			StudentDao.index=count;
+			
+		}catch(IOException|ClassNotFoundException e){
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
