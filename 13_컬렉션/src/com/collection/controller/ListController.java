@@ -3,9 +3,13 @@ package com.collection.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Consumer;
 
+import com.collection.common.FoodNmaeOrder;
 import com.collection.model.vo.Food;
 
 public class ListController {
@@ -228,7 +232,8 @@ public class ListController {
 		
 		//Studentmanage 프로젝트의 데이터 저장을 ArrayList로 변경해서 구현하기
 		
-		
+//		listTest2();
+		linkedListTest();
 	}
 	
 	private static void printArrayList(List list) {
@@ -236,4 +241,140 @@ public class ListController {
 			System.out.println(list.get(i));
 		}
 	}
+	
+	
+	public static void listTest2() {
+		//arratList추가 메소드
+		//forEach(Consumer(functional 인터페이스))
+		ArrayList foods=new ArrayList();//저장공간 생성
+		foods.add(new Food("짜장면", 9000, "중식"));
+		foods.add(new Food("치킨", 21000, "한식"));
+		foods.add(new Food("김밥", 2000, "한식"));
+		foods.add(new Food("초밥", 25000, "일식"));
+		
+		foods.forEach(new Test());
+		
+		foods.forEach(new Consumer() {
+			@Override //test 클래스 오버라이드 되어있음
+			public void accept(Object o) {
+				Food f=(Food)o;
+				if(f.getType().equals("한식")) {
+					System.out.println(f);
+				}
+			}
+		});
+		System.out.println("람다식");
+//		foods.forEach((o)->{System.out.println(o);});
+		foods.forEach((o)->{
+			Food f=(Food)o;
+			if(f.getType().equals("한식")) {
+				System.out.println(f);
+			}
+		});
+		
+		for(int i=0; i<foods.size(); i++) {
+			System.out.println(foods.get(i));
+		}
+//		for(Object o : foods) {
+//			
+//		}
+		
+		//리스트에 저장된 데이터는 순서를 가지고 있음
+		//정렬
+		// 정렬 기준을 제공하는 클래스, 인터페이스를 구현
+		// 값을 정렬하는 기준 : 메소드의 리턴값을 기준으로 설정
+		// 양수 : 앞뒤에 순서를 변경
+		// 음수 : 변경하지 않음
+		// 0 : 변경하지 않음
+		
+		System.out.println("정렬전 foods");
+		foods.forEach(o->System.out.println(o));
+		
+		//1. Comparator 인터페이스를 구현한 클래스를 이횽하는 방식 -> 정렬을 처리하는 전용클래스를 생성
+//		Collections.sort(foods, new FoodPriceFilter());
+		Collections.sort(foods, (pre,next)->{ //위에걸 람다로 바꿈
+			Food f=(Food)pre;
+			Food f2=(Food)next;
+//			return f.getPirce()-f2.getPirce(); //양수만 나오면되니까 이런식이될수있음
+			return f2.getPirce()-f.getPirce(); //위에꺼 반대			
+//			if(f.getPirce()>f2.getPirce()) return +1;
+//			else if(f.getPirce()<f2.getPirce()) return -1;
+//			else return 0;
+		});
+		
+		System.out.println("정렬후 foods");
+		foods.forEach(o->System.out.println(o));
+		
+		//2. Comparable 인터페이스를 구현함 -> vo클래스에 구현
+		System.out.println("compareTo로 정렬하기");
+		Collections.sort(foods);
+		foods.forEach(o-> System.out.println(o));
+		
+	
+		List names=new ArrayList();
+		names.add("유병승");
+		names.add("박세현");
+		names.add("김수진");
+		names.add("오윤재");
+		names.add("윤주");
+		names.forEach(o->System.out.println(o));
+		System.out.println("문자열 정렬하기");
+		Collections.sort(names);
+		names.forEach(o->System.out.println(o));
+		
+		
+		//음식을 이름순으로 정렬하기
+		System.out.println("음식 이름순으로 정렬하기");
+		Collections.sort(foods, new FoodNmaeOrder());
+		foods.forEach(o->System.out.println(o));
+		System.out.println("음식이름 내림차순으로 정렬하기");
+		Collections.sort(foods, (pre, next)->{
+			return ((Food)(next)).getName().compareTo(((Food)pre).getName());
+		});
+		foods.forEach(o->System.out.println(o));
+		
+		
+	}
+	
+	
+	public static void linkedListTest() {
+		//list 내부에 있는 데이터를 수정, 삭제, 삽입이 빈번한 경우
+		//ArrayList보다 성능이 좋은 클래스
+		LinkedList list=new LinkedList();
+		list.add("유병승");
+		list.add("박세현");
+		list.add("김성훈");
+		System.out.println(list.get(0));
+		list.forEach(o->System.out.println(o));
+		list.add(1, "김태훈");
+		
+		System.out.println(list.getFirst());
+		System.out.println(list.getLast());
+		
+		//java에서 수정이 많다 -> LinkedList가 효율적임
+		//java에서 보관용으로 사용 -> ArrayList가 료율 *웹에서 데이터 처리할때는 ArrayList클래스 사용
+		System.out.println("정렬 후 로직");
+		Collections.sort(list, (pre,next)->((String)pre).compareTo((String)next));
+		list.forEach(o->System.out.println(o));
+		System.out.println("정렬 후 로직");
+		list.sort((pre,next)->((String)pre).compareTo((String)next));
+		list.forEach(o->System.out.println(o));
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

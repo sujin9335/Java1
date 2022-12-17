@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>xmltest</comment>
+<entry key="address">서울시 강남구</entry>
+<entry key="phone">01093356987</entry>
+<entry key="name">유병승</entry>
+<entry key="email">asdf@asdf</entry>
+<entry key="test">123</entry>
+</properties>

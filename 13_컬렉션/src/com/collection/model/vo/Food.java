@@ -2,7 +2,7 @@ package com.collection.model.vo;
 
 import java.io.Serializable;
 
-public class Food implements Serializable{
+public class Food implements Serializable, Comparable{
 
 	
 	private static final long serialVersionUID = 2191821167971458969L;
@@ -63,9 +63,24 @@ public class Food implements Serializable{
 				else return false;
 			}
 		}
+
+
+		
 	}
 	
-	//해쉬코드 오버라이딩 해야됨 시간이없어서 못함
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(name, pirce, type);
+//	}
+	
+	@Override
+	public int compareTo(Object o) {
+		//오름차순
+//		return this.pirce-((Food)o).pirce;
+		//내림차순
+		return ((Food)o).pirce-this.pirce;
+		
+	}
 	
 	
 }

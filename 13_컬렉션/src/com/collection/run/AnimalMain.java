@@ -8,5 +8,6 @@ public class AnimalMain {
 		AnimalController ac=new AnimalController();
 		ac.inputAnimal();
 		
+		
 	}
 }
